@@ -908,118 +908,147 @@
         .socialcontainer:hover .social-icon-4 {
           transform: translateY(-70px);
         }
-        /* Like e dislike*/ 
-        .like-unlike-radio {
-          --inactive-color: #515254;
-          --active-color: #1877f2;
-          --hover: #ffffff;
-          background-color: rgb(202, 202, 202);
-          border-radius: 18px;
-          box-shadow: 3px 2px 4px rgb(0, 0, 0);
-          border: 3px double #0099ff;
-          width: 90px;
-          padding: 10px;
-          display: flex;
-          align-items: center;
-          column-gap: 24px;
-          flex-shrink: 0;
-          position: absolute;
-          top: 512px;
-          left: 585px;
-        }
-        .like-unlike-radio .custom-radio-fb {
-          display: none;
-        }
-        .like-unlike-radio .feedback-label {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          row-gap: 10px;
-          font-size: 14px;
-          font-weight: 600;
-          color: var(--inactive-color);
-          margin: 0;
-          cursor: pointer;
-          transition: 0.2s ease-in-out;
-          -webkit-transition: 0.2s ease-in-out;
-          -moz-transition: 0.2s ease-in-out;
-          -ms-transition: 0.2s ease-in-out;
-          -o-transition: 0.2s ease-in-out;
-        }
-        .like-unlike-radio .feedback-label:hover {
-          color: var(--hover);
-        }
-        .icon {
-          transition: 0.2s ease-in-out;
-          -webkit-transition: 0.2s ease-in-out;
-          -moz-transition: 0.2s ease-in-out;
-          -ms-transition: 0.2s ease-in-out;
-          -o-transition: 0.2s ease-in-out;
-        }
-        .like-unlike-radio .feedback-label:hover .icon {
-          transform: scale(1.3);
-        }
-        .like-unlike-radio .custom-radio-fb:checked ~ .feedback-label {
-          color: var(--active-color);
-        }
-        .like-unlike-radio .custom-radio-fb:checked ~ .feedback-label svg {
-          animation: keyframes-fill 0.2s ease-in-out;
-        }
-        /* ------ Animation ------ */
-        @keyframes keyframes-fill {
-          0% {
-            transform: scale(0);
-            opacity: 0;
-          }
-          50% {
-            transform: scale(1.2) rotate(-10deg);
-          }
-        }
+        /* From Uiverse.io by 3bdel3ziz-T */ 
+.gostei {
+  --col-gray: #3f3f3f;
+  --col-white: #fff;
+  --col-like: #2196f3;
+  --col-dislike: #ff3232;
+  --transition: 350ms;
+  background-color: var(--col-gray);
+  width: 130px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 505px;
+  left: 530px;
+  padding: 9px;
+  user-select: none;
+  /*you can easlly change the number by using this variabels*/
+  --zero: translateY(calc(50% - 11px));
+  --one: translateY(calc(40% - 11px));
+  --two: translateY(calc(30% - 11px));
+  --three: translateY(calc(20% - 11px));
+  --four: translateY(calc(10% - 11px));
+  --five: translateY(calc(0% - 11px));
+  --six: translateY(calc(-10% - 11px));
+  --seven: translateY(calc(-20% - 11px));
+  --eight: translateY(calc(-30% - 11px));
+  --nine: translateY(calc(-40% - 11px));
+  --ten: translateY(calc(-50% - 11px));
+}
+.gostei:has(#like:checked) .count {
+  border-left-color: var(--col-like);
+  border-right-color: transparent;
+}
+.gostei:has(#like:checked) .count .number:first-child {
+  /*change first number from here*/
+  /*when click on like*/
+  transform: var(--nine);
+}
+.gostei:has(#like:checked) .count .number:nth-child(2) {
+  /*change second number from here*/
+  /*when click on like*/
+  transform: var(--five);
+}
+.gostei:has(#like:checked) .count .number:last-child {
+  /*change third number from here*/
+  /*when click on like*/
+  transform: var(--three);
+}
+.gostei:has(#dislike:checked) > .count {
+  border-right-color: var(--col-dislike);
+  border-left-color: transparent;
+}
+.gostei:has(#dislike:checked) > .count .number:first-child {
+  /*change first number from here*/
+  /*when click on dislike*/
+  transform: var(--zero);
+}
+.gostei:has(#dislike:checked) > .count .number:nth-child(2) {
+  /*change second number from here*/
+  /*when click on dislike*/
+  transform: var(--zero);
+}
+.gostei:has(#dislike:checked) > .count .number:last-child {
+  /*change third number from here*/
+  /*when click on dislike*/
+  transform: var(--nine);
+}
+.gostei label input {
+  display: none;
+}
+.gostei #like:checked + svg {
+  animation: evaluation-animation var(--transition) ease-in-out 0s 1 normal both;
+  fill: var(--col-like);
+}
+.gostei #dislike:checked + svg {
+  animation: evaluation-animation var(--transition) ease-in-out 0s 1 normal both;
+  fill: var(--col-dislike);
+}
+.gostei .icon {
+  cursor: pointer;
+  fill: var(--col-white);
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gostei .icon.like {
+  margin-left: 9px;
+}
+.gostei .icon.dislike {
+  margin-right: 9px;
+}
+.gostei .count {
+  transition: var(--transition);
+  flex: 1;
+  border-left: 1px solid var(--col-white);
+  border-right: 1px solid var(--col-white);
+  position: relative;
+  height: 24px;
+  overflow: hidden;
+  margin: auto;
+  color: white;
+  font-size: 16px;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  gap: 0.5px;
+  flex-direction: row;
+}
+.gostei .count .number {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(50% - 8px));
+  transition: 1000ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.gostei .count .number:first-child {
+  transition-delay: 200ms;
+}
+.gostei .count .number:nth-child(2) {
+  transition-delay: 150ms;
+}
+.gostei .count .number:last-child {
+  transition-delay: 50ms;
+}
+
+@keyframes evaluation-animation {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-10deg);
+  }
+}
+
         
-        /* From Uiverse.io by JulanDeAlb */ 
-        .hamburger {
-          cursor: pointer;
-          position: absolute;
-          top: -670px;
-          left: -440px;
-        }
-
-        .hamburger input {
-          display: none;
-        }
-
-        .hamburger svg {
-          /* The size of the SVG defines the overall size */
-          height: 3em;
-          /* Define the transition for transforming the SVG */
-          transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .line {
-          fill: none;
-          stroke: rgb(26, 61, 126);
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-width: 3;
-          /* Define the transition for transforming the Stroke */
-          transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-                      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .line-top-bottom {
-          stroke-dasharray: 12 63;
-        }
-
-        .hamburger input:checked + svg {
-          transform: rotate(-45deg);
-        }
-
-        .hamburger input:checked + svg .line-top-bottom {
-          stroke-dasharray: 20 300;
-          stroke-dashoffset: -32.42;
-        }
-
-
         .quadrado4{
           width: 1170px;
           height: 400px;
@@ -1044,8 +1073,250 @@
            
         }
         
+        .menu{
+          margin-left: -520px;
+          margin-top: -930px;
 
+        }
+        .menu .menu-faketrigger{
+            position: absolute;
+            z-index: 1000;
+            width: 35px;
+            height: 35px;
+            opacity: 0;
+            cursor: pointer;
+        }
 
+        .menu .menu-lines{
+          position: absolute;
+          z-index: 999;
+          width: 35px;
+          height: 35px;
+        }
+
+        .menu .menu-lines span{
+          display: block;
+          width: 35px;
+          height: 5px;
+          margin-bottom: 7px;
+          background-color: rgb(42, 34, 146);
+          border-radius: 50px;
+          transition: all ease .2s;
+        }
+
+        .menu .menu-faketrigger:checked ~ .menu-lines span {
+          background-color: #ff5757;
+        }
+
+        .menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(1){
+          transform-origin: 0% 0%;
+          transform: rotate(45deg) scaleX(1.05);
+        }
+         .menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(2){
+          opacity: 0;
+        }
+         .menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(3){
+          transform-origin: 0% 100% ;
+          transform: rotate(-45deg) scaleX(1.05);
+        }
+
+        .menu ul{
+          position: absolute;
+          z-index: 998;
+          left: 0px;
+          top: 3px;
+          width: 270px;
+          height: calc(206vh - 100px);
+          padding-top:100px ;
+          background-color: rgb(36, 115, 161);
+          margin-top: -725px;
+          margin-left: -900px;
+          transition: all ease .3s;
+
+        }
+        .menu-faketrigger:checked ~ ul{
+          margin-left: -502px;
+          margin-top: -720px;
+        }
+       .barrinhas {
+          width: 210px;
+          height: 254px;
+          border-radius: 4px;
+          position: absolute;
+          top: 150px;
+          background: transparent;
+          display: flex;
+          gap: 5px;
+          padding: .4em;
+        }
+
+        .barrinhas p {
+          height: 100%;
+          flex: 1;
+          overflow: hidden;
+          cursor: pointer;
+          border-radius: 2px;
+          transition: all .5s;
+          border: 1px solid #02f8f8;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .barrinhas p:hover {
+          flex: 4;
+        }
+
+        .barrinhas p span {
+          min-width: 14em;
+          padding: .5em;
+          text-align: center;
+          transform: rotate(-90deg);
+          transition: all .5s;
+          text-transform: uppercase;
+          color: #02f8f8;
+          letter-spacing: .1em;
+        }
+
+        .barrinhas p:hover span {
+          transform: rotate(0);
+        }
+        .switch-button {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          justify-content: center;
+          justify-content: center;
+          margin: auto;
+          height: 55px;
+          position: absolute;
+          top: 100px;
+          left: 45px;
+        }
+
+        .switch-button .switch-outer {
+          height: 80%;
+          background: #252532;
+          width: 90px;
+          border-radius: 165px;
+          -webkit-box-shadow: inset 0px 5px 10px 0px #16151c, 0px 3px 6px -2px #403f4e;
+          box-shadow: inset 0px 5px 10px 0px #16151c, 0px 3px 6px -2px #403f4e;
+          border: 1px solid #32303e;
+          padding: 4px;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        .switch-button .switch-outer input[type="checkbox"] {
+          opacity: 0;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          position: absolute;
+        }
+
+        .switch-button .switch-outer .button-toggle {
+          height: 32px;
+          width: 32px;
+          background: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(#3b3a4e),
+            to(#272733)
+          );
+          background: -o-linear-gradient(#3b3a4e, #272733);
+          background: linear-gradient(#3b3a4e, #272733);
+          border-radius: 100%;
+          -webkit-box-shadow: inset 0px 5px 4px 0px #424151, 0px 4px 15px 0px #0f0e17;
+          box-shadow: inset 0px 5px 4px 0px #424151, 0px 4px 15px 0px #0f0e17;
+          position: relative;
+          z-index: 2;
+          -webkit-transition: left 0.3s ease-in;
+          -o-transition: left 0.3s ease-in;
+          transition: left 0.3s ease-in;
+          left: 0;
+        }
+
+        .switch-button
+          .switch-outer
+          input[type="checkbox"]:checked
+          + .button
+          .button-toggle {
+          left: 58%;
+        }
+
+        .switch-button
+          .switch-outer
+          input[type="checkbox"]:checked
+          + .button
+          .button-indicator {
+          -webkit-animation: indicator 1s forwards;
+          animation: indicator 1s forwards;
+        }
+
+        .switch-button .switch-outer .button {
+          width: 100%;
+          height: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          position: relative;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+        }
+
+        .switch-button .switch-outer .button-indicator {
+          height: 25px;
+          width: 25px;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          border-radius: 50%;
+          border: 3px solid #ef565f;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          right: 5px;
+          position: relative;
+        }
+
+        @-webkit-keyframes indicator {
+          30% {
+            opacity: 0;
+          }
+
+          0% {
+            opacity: 1;
+          }
+
+          100% {
+            opacity: 1;
+            position: absolute;
+            border: 3px solid #60d480;
+            left: -62%;
+          }
+        }
+
+        @keyframes indicator {
+          30% {
+            opacity: 0;
+          }
+
+          0% {
+            opacity: 1;
+          }
+
+          100% {
+            opacity: 1;
+            border: 3px solid #60d480;
+            left: -62%;
+          }
+        }
 
        /*formatacoes gerais*/
         h1{
@@ -1332,73 +1603,109 @@ O estúdio é famoso por criar filmes que combinam tecnologia de ponta com hist�
 </div>
 
 
-<!-- Like e dislike--> 
-<div class="like-unlike-radio">
-  <div>
-    <input
-      checked=""
-      id="like"
-      name="feedback"
-      value="like"
-      class="custom-radio-fb"
-      type="radio"
-    />
-    <label for="like" class="feedback-label">
-      <svg
-        class="icon"
-        width="27"
-        height="27"
-        viewBox="0 0 27 27"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M0.7229 26.5H5.92292V10.9008H0.7229V26.5ZM26.6299 15.2618L24.372 23.7566C23.9989 25.3696 22.5621 26.5 20.9072 26.5H8.52293V10.9278L10.7573 2.87293C10.9669 1.50799 12.1418 0.5 13.524 0.5C15.0699 0.5 16.323 1.7527 16.323 3.29837V10.8998H23.1651C25.4519 10.9009 27.1453 13.0335 26.6299 15.2618Z"
-          fill="currentColor"
-        ></path>
-      </svg>
-      Like
-    </label>
+<!-- From Uiverse.io by 3bdel3ziz-T --> 
+<div class="gostei">
+  <label for="dislike">
+    <input type="radio" name="evaluation" id="dislike" />
+    <svg
+      class="icon dislike"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M20 3H6.693A2.01 2.01 0 0 0 4.82 4.298l-2.757 7.351A1 1 0 0 0 2 12v2c0 1.103.897 2 2 2h5.612L8.49 19.367a2.004 2.004 0 0 0 .274 1.802c.376.52.982.831 1.624.831H12c.297 0 .578-.132.769-.36l4.7-5.64H20c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm-8.469 17h-1.145l1.562-4.684A1 1 0 0 0 11 14H4v-1.819L6.693 5H16v9.638L11.531 20zM18 14V5h2l.001 9H18z"
+      ></path>
+    </svg>
+  </label>
+  <div class="count">
+    <div class="number">
+      <span>0</span>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+      <span>9</span>
+    </div>
+    <div class="number">
+      <span>0</span>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+      <span>9</span>
+    </div>
+    <div class="number">
+      <span>0</span>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+      <span>9</span>
+    </div>
   </div>
-  <div>
-    <input
-      name="feedback"
-      value="unlike"
-      id="unlike"
-      class="custom-radio-fb"
-      type="radio"
-    />
-    <label for="unlike" class="feedback-label">
-      <svg
-        class="icon"
-        width="27"
-        height="27"
-        viewBox="0 0 27 27"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M26.7229 0.5L21.5229 0.5L21.5229 16.0992L26.7229 16.0992L26.7229 0.5ZM0.815853 11.7382L3.07376 3.24339C3.44687 1.63037 4.88372 0.500027 6.53861 0.500027L18.9229 0.500028L18.9229 16.0722L16.6885 24.1271C16.4789 25.492 15.304 26.5 13.9218 26.5C12.3759 26.5 11.1228 25.2473 11.1228 23.7016L11.1228 16.1002L4.28068 16.1002C1.99391 16.0991 0.300502 13.9664 0.815853 11.7382Z"
-          fill="currentColor"
-        ></path>
-      </svg>
-      Dislike
-    </label>
-  </div>
+  <label for="like">
+    <input type="radio" name="evaluation" id="like" checked="" />
+    <svg
+      class="icon like"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M20 8h-5.612l1.123-3.367c.202-.608.1-1.282-.275-1.802S14.253 2 13.612 2H12c-.297 0-.578.132-.769.36L6.531 8H4c-1.103 0-2 .897-2 2v9c0 1.103.897 2 2 2h13.307a2.01 2.01 0 0 0 1.873-1.298l2.757-7.351A1 1 0 0 0 22 12v-2c0-1.103-.897-2-2-2zM4 10h2v9H4v-9zm16 1.819L17.307 19H8V9.362L12.468 4h1.146l-1.562 4.683A.998.998 0 0 0 13 10h7v1.819z"
+      ></path>
+    </svg>
+  </label>
 </div>
 
-<!-- From Uiverse.io by JulanDeAlb --> 
-<label class="hamburger">
-  <input type="checkbox">
-  <svg viewBox="0 0 32 32">
-    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-    <path class="line" d="M7 16 27 16"></path>
-  </svg>
+
+<nav class="menu">
+  <input type="checkbox" class="menu-faketrigger" />
+  <div class="menu-lines">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul>
+    <a href="">
+       <div class="barrinhas">
+    <p><span>FILMES PIXAR</span></p>
+    <p><span>FILMES UNIVERSAL</span></p>
+    <p><span>FILMES MARVEL</span></p>
+</div>
+</a>
+<a href="">
+    <p><div>
+<label class="switch-button" for="switch">
+  <div class="switch-outer">
+    <input id="switch" type="checkbox">
+    <div class="button">
+      <div class="button-toggle"></div>
+      <div class="button-indicator"></div>
+    </div>
+  </div>
 </label>
+</div></p>
+</a>
+  </ul>
+
+</nav>
+
 
 </div>
 </body>

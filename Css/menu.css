@@ -1,0 +1,65 @@
+       .menu{
+          margin-left: -520px;
+          margin-top: -930px;
+
+        }
+        .menu .menu-faketrigger{
+            position: absolute;
+            z-index: 1000;
+            width: 35px;
+            height: 35px;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .menu .menu-lines{
+          position: absolute;
+          z-index: 999;
+          width: 35px;
+          height: 35px;
+        }
+
+        .menu .menu-lines span{
+          display: block;
+          width: 35px;
+          height: 5px;
+          margin-bottom: 7px;
+          background-color: rgb(42, 34, 146);
+          border-radius: 50px;
+          transition: all ease .2s;
+        }
+
+        .menu .menu-faketrigger:checked ~ .menu-lines span {
+          background-color: #ff5757;
+        }
+
+        .menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(1){
+          transform-origin: 0% 0%;
+          transform: rotate(45deg) scaleX(1.05);
+        }
+         .menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(2){
+          opacity: 0;
+        }
+         .menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(3){
+          transform-origin: 0% 100% ;
+          transform: rotate(-45deg) scaleX(1.05);
+        }
+
+        .menu ul{
+          position: absolute;
+          z-index: 998;
+          left: 0px;
+          top: 3px;
+          width: 270px;
+          height: calc(206vh - 100px);
+          padding-top:100px ;
+          background-color: rgb(36, 115, 161);
+          margin-top: -725px;
+          margin-left: -900px;
+          transition: all ease .3s;
+
+        }
+        .menu-faketrigger:checked ~ ul{
+          margin-left: -502px;
+          margin-top: -720px;
+        }

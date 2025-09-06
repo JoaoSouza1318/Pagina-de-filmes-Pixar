@@ -1,7 +1,6 @@
 @media (max-width: 393px){
         body{
-          width: 393px;
-          background-image: linear-gradient( to top,#003f63 0%, #252674 25%, rgb(18, 79, 114) 50%, rgb(110, 110, 110) 75%, rgb(255, 255, 255) 100%);
+          background-image: 393px linear-gradient( to top,#003f63 0%, #252674 25%, rgb(18, 79, 114) 50%, rgb(110, 110, 110) 75%, rgb(255, 255, 255) 100%);
           background-repeat: no-repeat;
           background-size: cover;
         }

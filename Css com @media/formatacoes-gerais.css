@@ -1,4 +1,4 @@
-@media screen and (max-width: 393px){
+@media (max-width: 393px){
         body{
           width: 393px;
           background-image: linear-gradient( to top,#003f63 0%, #252674 25%, rgb(18, 79, 114) 50%, rgb(110, 110, 110) 75%, rgb(255, 255, 255) 100%);

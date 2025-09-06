@@ -56,6 +56,6 @@ img{
           background-image: linear-gradient( to top,#003f63 0%, #252674 25%, rgb(18, 79, 114) 50%, rgb(110, 110, 110) 75%, rgb(255, 255, 255) 100%);
           background-repeat: no-repeat;
           background-size: 200%;
-          height: 200vh;
+          height: 300vh;
         }
 }

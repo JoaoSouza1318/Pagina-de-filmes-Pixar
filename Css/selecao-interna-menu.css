@@ -1,4 +1,5 @@
- .barrinhas {
+@media screen and (min-width:393px) and (max-width: 2000px){
+.barrinhas {
           width: 210px;
           height: 254px;
           border-radius: 4px;
@@ -41,3 +42,4 @@
         .barrinhas p:hover span {
           transform: rotate(0);
         }
+}

@@ -1,3 +1,4 @@
+@media screen and (min-width:393px) and (max-width: 2000px){
 /* Framework redes sociais*/ 
         .social-login-icons {
           display: flex;
@@ -99,3 +100,4 @@
         .socialcontainer:hover .social-icon-4 {
           transform: translateY(-70px);
         }
+}

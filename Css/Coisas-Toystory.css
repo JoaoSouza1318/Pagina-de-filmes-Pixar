@@ -1,3 +1,4 @@
+ @media screen and (min-width:393px) and (max-width: 2000px){
  /*Botão toy story*/
         .btn-54,
         .btn-54 *,
@@ -129,3 +130,4 @@
             left:448px;
             margin-left: 50px;
         }
+ }

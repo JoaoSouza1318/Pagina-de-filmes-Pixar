@@ -1,4 +1,5 @@
- /* css da foto que mexe */ 
+@media screen and (min-width:393px) and (max-width: 2000px){
+/* css da foto que mexe */ 
         .container {
           position: relative;
           width: 350px;
@@ -334,3 +335,4 @@
           /* Non-prefixed version, currently
                           supported by Chrome, Edge, Opera and Firefox */
         }
+}

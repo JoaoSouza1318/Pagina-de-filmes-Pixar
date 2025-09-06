@@ -1,4 +1,6 @@
-        /* like*/ 
+  
+  @media screen and (min-width:393px) and (max-width: 2000px){
+    /* like*/ 
         .gostei {
         --col-gray: #3f3f3f;
         --col-white: #fff;
@@ -137,3 +139,4 @@
             transform: scale(1.1) rotate(-10deg);
         }
         }
+  }

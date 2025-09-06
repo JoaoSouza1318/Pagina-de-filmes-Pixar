@@ -1,3 +1,4 @@
+@media screen and (min-width:393px) and (max-width: 2000px){
 /*botao madagascar*/
         .btn-55,
         .btn-55 *,
@@ -131,3 +132,4 @@
             left:350px;
             margin-left: 50px;
         }
+}

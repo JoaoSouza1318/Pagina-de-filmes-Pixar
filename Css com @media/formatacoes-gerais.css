@@ -1,7 +1,8 @@
 @media screen and (max-width: 393px){
         body{
           background-image: linear-gradient( to top,#003f63 0%, #252674 25%, rgb(18, 79, 114) 50%, rgb(110, 110, 110) 75%, rgb(255, 255, 255) 100%);
-          background-size: 393px;
+          width: 393px;
+          height: 10px;
         }
         h1{
           font-family: 'Playfair Display SC', serif;

@@ -1,16 +1,12 @@
 @media screen and (max-width: 393px){
+  @media (orientation: landscape) {
         body{
           background-image: linear-gradient( to top,#003f63 0%, #252674 25%, rgb(18, 79, 114) 50%, rgb(110, 110, 110) 75%, rgb(255, 255, 255) 100%);
-          width: 393px;
-          height: 10px;
+          width: 150vh;
+          height: 150vh;
         }
         h1{
-          font-family: 'Playfair Display SC', serif;
           text-align: center;
-          color: rgb(255, 255, 255);
-          -webkit-text-stroke: 0.7px #000000;
-          margin-top: 30px;
-          font-size: 50px;
-          text-shadow: #646464bd 3px 3px 5px ;
         }
       }
+}
